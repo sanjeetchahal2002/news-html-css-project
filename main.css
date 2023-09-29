@@ -6,18 +6,21 @@
 }
 .main{
     background: hsl(36, 100%, 99%);
-    padding: 8rem;
+    padding: 4rem;
+    overflow-x:hidden;
 }
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    padding-bottom: 1rem;
 }
 .navbar-list{
     display: flex;
     gap:2rem;
     list-style-type: none;
+
 }
 .navbar-list-items > a{
     color:  hsl(236, 13%, 42%);
@@ -115,29 +118,29 @@
     border-top: 1px solid hsl(236, 13%, 42%);
 }
 
-.footer{
+.blog{
     display: flex;
     padding: 2rem;
     gap:2rem;
 }
-.footer-card{
+.blog-card{
     display: flex;
 }
-.footer-card-image > img{
+.blog-card-image > img{
     height: 60%;
     padding-right: 1rem;
 }
-.footer-card-content-Number > h1{
+.blog-card-content-Number > h1{
     color:hsl(236, 13%, 42%) ;
     padding-bottom: 1rem;
 }
-.footer-card-content-heading > a{
+.blog-card-content-heading > a{
     font-weight: 800;
     color: black;
     text-decoration: none;
     padding-bottom: 1rem;
 }
-.footer-card-content-main{
+.blog-card-content-main{
     color:hsl(236, 13%, 42%) ;
 }
 
@@ -151,7 +154,23 @@
     color: hsl(35, 77%, 62%);
 }
 
-@media (max-width:375px){  
+
+@media(max-width:1145px){
+    .blog{
+        flex-direction: column;
+        gap:1.5rem;
+    }
+    .blog-card-image > img{
+        height: 15rem;
+        padding-right: 2rem;
+    }
+    .navbar-list{
+        gap:1rem;
+    }
+}
+
+
+@media (max-width:800px){
     .main{ 
         padding: 0px;
         width: 100vw;
@@ -180,21 +199,50 @@
     .content-left-head-image > img{
         height: 15rem;
     }
-    .footer{
+    .blog{
+        flex-direction: column;   
+        justify-content: flex-start;
+        gap:1rem;
+        padding-top: 2rem;
+    }
+    .blog-card-image > img{
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+}
+
+
+@media (max-width:375px){  
+    .blog{
         flex-direction: column;
         justify-content: flex-start;
     }
-    .footer-card-image{
+    .blog-card-image{
         width: 50%;
         padding-right: 0px;
     }
-    .footer-card-image > img{
+    .blog-card-image > img{
         height: 10rem;
         padding-right: 0px;
     }
-    .footer-card{
+    .blog-card{
         padding-bottom: 0px;
         gap:1.5rem;
         height: 13rem;
     }
 }
+@media (max-width:320px){
+    .blog-card{
+        flex-direction: column;
+    }
+    .blog-card-image > img{
+        width: 80vw;
+        height: 12rem;
+        align-self: flex-start;
+    }
+    .blog{
+        gap: 10rem;
+    }
+}
+
